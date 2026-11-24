@@ -12,11 +12,13 @@ server/data/
 server/google_tokens.json
 
 # Env files
+.env
 server/.env
 client/.env
 
-# Logs
+# Logs & Media Captures
 *.log
+*.mp4
 
 # VS Code
 .vscode/

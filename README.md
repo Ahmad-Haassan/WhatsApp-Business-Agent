@@ -18,7 +18,7 @@
 
 <br />
 
-![WhatsApp Business AI Agent Showcase](./docs/whatsapp_agent_showcase.jpg)
+![WhatsApp Business AI Agent Showcase](./docs/whatsapp_agent_showcase.png)
 
 </div>
 
@@ -70,11 +70,12 @@
 
 ## 🛠️ Tech Stack
 
-* **Language**: Python 3.10+
-* **Messaging Platform**: Meta WhatsApp Business Cloud API
-* **Scheduling**: Google Cloud Calendar API v3
-* **AI & NLP**: Context-driven intent extraction & prompt orchestration
-* **Backend**: Python HTTP Server / Webhook Listener
+* **Backend & API**: Python 3.10+ / 3.11, FastAPI, Uvicorn, Python-SocketIO
+* **Messaging Platform**: Meta WhatsApp Business Cloud API (Graph API v21.0)
+* **Scheduling**: Google Cloud Calendar API v3 with automatic Google Meet link creation
+* **AI & NLP**: Google Gemini AI (`google-genai`) & autonomous heuristic intent routing
+* **Frontend Simulator**: React 18, Vite, Tailwind CSS, Lucide Icons
+* **Testing & Verification**: Automated Python test suite (`test_agent.py`)
 
 ---
 
@@ -87,36 +88,44 @@ cd WhatsApp-Business-Agent
 ```
 
 ### 2. Configure Environment Variables
-Create a `.env` file based on `.env.example`:
+Copy `.env.example` to `.env`:
 ```bash
-# Meta WhatsApp Cloud API Credentials
-WHATSAPP_PHONE_NUMBER_ID="your_phone_number_id"
-WHATSAPP_BUSINESS_ACCOUNT_ID="your_business_account_id"
-WHATSAPP_ACCESS_TOKEN="your_meta_system_user_access_token"
-WEBHOOK_VERIFY_TOKEN="your_custom_secure_verify_token"
-
-# Google Calendar API Credentials
-GOOGLE_CLIENT_ID="your_google_client_id"
-GOOGLE_CLIENT_SECRET="your_google_client_secret"
-GOOGLE_CALENDAR_ID="primary"
-
-# AI / LLM Configuration
-AI_API_KEY="your_api_key"
+cp .env.example .env
 ```
+*(The project runs out-of-the-box in simulation mode. Fill in your Meta, Gemini, and Google Calendar keys when ready to go live).*
 
 ### 3. Install Dependencies
 ```bash
-# Set up virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install requirements
+# Python Backend Dependencies
 pip install -r requirements.txt
+
+# Client Simulator Dependencies
+cd client
+npm install
+cd ..
 ```
 
-### 4. Run the Webhook Server
+### 4. Run the Application
+You can run both the backend server and the interactive simulator with a single command:
+
+**On Windows:**
+```cmd
+run_dev.bat
+```
+
+**Or manually in separate terminals:**
 ```bash
+# Terminal 1: Python Webhook Server (http://localhost:8000)
 python main.py
+
+# Terminal 2: React Web Simulator (http://localhost:3000)
+cd client
+npm run dev
+```
+
+### 5. Run Automated Tests
+```bash
+python test_agent.py
 ```
 
 Expose your local server via `ngrok` or deploy to Render/Railway, then configure your Meta App webhook callback URL to:
