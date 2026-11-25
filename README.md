@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🤖 WhatsApp Business AI Agent
+# WhatsApp Business AI Agent
 ### *Automated Customer Inquiries, Smart Appointment Scheduling & Meta Cloud API Integration*
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
@@ -11,10 +11,10 @@
 <br />
 
 <p align="center">
-  An enterprise-grade conversational AI assistant designed to automate high-volume customer communication on WhatsApp. Equipped with automated intent detection, instant answers to frequent queries, and autonomous meeting scheduling directly into Google Calendar.
+  A conversational AI assistant designed to automate customer communication on WhatsApp. Equipped with automated intent detection, instant answers to frequent queries and autonomous meeting scheduling directly into Google Calendar.
 </p>
 
-[**Explore Architecture**](#-system-architecture) • [**Setup Guide**](#-setup--installation) • [**Report Bug**](https://github.com/Ahmad-Haassan/WhatsApp-Business-Agent/issues)
+[**Explore Architecture**](#system-architecture) • [**Setup Guide**](#setup--installation) • [**Report Bug**](https://github.com/Ahmad-Haassan/WhatsApp-Business-Agent/issues)
 
 <br />
 
@@ -24,18 +24,18 @@
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
-### 1. ⚡ Intelligent Message Routing & Automated FAQs
-* **Instant Intent Classification**: Identifies customer intentions (e.g., pricing, order status, technical support, meeting requests) and responds within seconds.
+### 1. Intelligent Message Routing & Automated FAQs
+* **Instant Intent Classification**: Identifies customer intentions (such as pricing, order status, technical support or meeting requests) and responds within seconds.
 * **Contextual Conversations**: Generates natural, context-aware responses powered by AI instead of rigid scripted trees.
 * **Human-in-the-Loop Hand-off**: Detects unresolved or sensitive queries and flags them for human support representatives.
 
-### 2. 📅 Autonomous Google Calendar Scheduling
+### 2. Autonomous Google Calendar Scheduling
 * **Natural Date & Time Extraction**: Understands user requests like *"Can we talk next Tuesday at 3 PM?"* and checks availability via Google Calendar API.
 * **Auto-Event Creation**: Generates calendar invites with custom Google Meet links and sends automated confirmations to the client on WhatsApp.
 
-### 3. 🛡️ Enterprise Meta Cloud API Integration
+### 3. Enterprise Meta Cloud API Integration
 * **Webhook Architecture**: Securely processes incoming webhook payloads with cryptographic signature verification (`X-Hub-Signature-256`).
 * **High Throughput**: Capable of handling concurrent incoming messages with asynchronous event workers.
 
@@ -92,7 +92,7 @@ Copy `.env.example` to `.env`:
 ```bash
 cp .env.example .env
 ```
-*(The project runs out-of-the-box in simulation mode. Fill in your Meta, Gemini, and Google Calendar keys when ready to go live).*
+*(The project runs out-of-the-box in simulation mode. Fill in your Meta, Gemini and Google Calendar keys when ready to go live).*
 
 ### 3. Install Dependencies
 ```bash
